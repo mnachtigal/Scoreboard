@@ -9,6 +9,10 @@ using namespace std;
 class Scoreboard : public IScoreboard {
    public:
       Scoreboard(int competitor, int period, int score);
+	   void setScore(int competitor, int period, int score);
+	   int getScore(int competitor, int period);
+	   int getTotalScore(int competitor);
+	   void clearScoreboard();
    private:
       int m_competitor;
       int m_period;
