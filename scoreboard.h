@@ -8,14 +8,15 @@ using namespace std;
 
 class Scoreboard : public IScoreboard {
    public:
-      Scoreboard(int competitor, int period, int score);
+      Scoreboard(int competitors, int period, int score);
 	   void setScore(int competitor, int period, int score);
 	   int getScore(int competitor, int period);
 	   int getTotalScore(int competitor);
 	   void clearScoreboard();
    private:
-      int m_competitor;
+      // each index coincides with competitor/score
+      vector<int> m_competitors;
       int m_period;
-      int m_score;
+      vector<vector<int>> m_scores;
 };
 #endif
