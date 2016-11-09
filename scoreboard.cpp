@@ -19,6 +19,7 @@ void Scoreboard::setScore(int competitor, int period, int score)
 
 int Scoreboard::getScore(int competitor, int period)
 {
+  return m_scores[competitor-1][period-1];
 
 }
 
