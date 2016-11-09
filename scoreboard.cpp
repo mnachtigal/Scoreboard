@@ -29,5 +29,11 @@ int Scoreboard::getTotalScore(int competitor)
 
 void Scoreboard::clearScoreboard()
 {
-
+	for(int i = 0;i < m_score.size();i++)
+	{
+		for(int j = 0; < m_score[i].size();j++)
+		{
+			m_score[i][j] = 0;
+		}
+	}
 }
