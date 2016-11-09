@@ -14,16 +14,19 @@ Scoreboard::Scoreboard(int competitors, int period) {
 
 void setScore(int competitor, int period, int score)
 {
-
+   m_score[i - 1][period - 1] = score;
 }
+
 int Scoreboard::getScore(int competitor, int period)
 {
 
 }
+
 int Scoreboard::getTotalScore(int competitor)
 {
 
 }
+
 void Scoreboard::clearScoreboard()
 {
 
