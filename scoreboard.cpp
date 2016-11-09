@@ -25,7 +25,13 @@ int Scoreboard::getScore(int competitor, int period)
 
 int Scoreboard::getTotalScore(int competitor)
 {
+	int score = 0;
+	for(int i = 0; i < m_score.size(); i++)
+	{
+		score = score + m_score[competitor][i];
+	}
 
+	return score;
 }
 
 void Scoreboard::clearScoreboard()
