@@ -8,7 +8,7 @@ using namespace std;
 
 class Scoreboard : public IScoreboard {
    public:
-      Scoreboard(int competitors, int period, int score);
+      Scoreboard(int competitors, int period);
 	   void setScore(int competitor, int period, int score);
 	   int getScore(int competitor, int period);
 	   int getTotalScore(int competitor);
