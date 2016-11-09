@@ -22,7 +22,7 @@ int Scoreboard::getScore(int competitor, int period)
 }
 int Scoreboard::getTotalScore(int competitor)
 {
-
+	return m_score[competitor];
 }
 void Scoreboard::clearScoreboard()
 {
