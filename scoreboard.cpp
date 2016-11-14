@@ -6,7 +6,7 @@ using namespace std;
 Scoreboard::Scoreboard(int competitors, int period) {
    m_competitors.resize(competitors);
    m_scores.resize(competitors);
-   for (int i = 0; i < m_scores.size(); ++i) {
+   for (unsigned int i = 0; i < m_scores.size(); ++i) {
       m_scores[i].resize(period);
    }
    m_period = period;
@@ -14,14 +14,20 @@ Scoreboard::Scoreboard(int competitors, int period) {
 
 void Scoreboard::setScore(int competitor, int period, int score)
 {
-   if (competitor > 0 && competitor <= m_scores.size() && period > 0 && period <= m_scores[0].size()) {
+   int num_competitors = m_scores.size();
+   int num_periods = m_scores[0].size();
+   if (competitor > 0 && competitor <= num_competitors
+         && period > 0 && period <= num_periods) {
       m_scores[competitor - 1][period - 1] = score;
    }
 }
 
 int Scoreboard::getScore(int competitor, int period)
 {
-   if (competitor > 0 && competitor <= m_scores.size() && period > 0 && period <= m_scores[0].size()) {
+   int num_competitors = m_scores.size();
+   int num_periods = m_scores[0].size();
+   if (competitor > 0 && competitor <= num_competitors 
+         && period > 0 && period <= num_periods) {
       return m_scores[competitor-1][period-1];
    } else {
       return INT_MIN;
@@ -31,7 +37,7 @@ int Scoreboard::getScore(int competitor, int period)
 int Scoreboard::getTotalScore(int competitor)
 {
 	int score = 0;
-	for(int i = 0; i < m_scores.size(); i++)
+	for(unsigned int i = 0; i < m_scores.size(); i++)
 	{
 		score = score + m_scores[competitor][i];
 	}
@@ -41,9 +47,9 @@ int Scoreboard::getTotalScore(int competitor)
 
 void Scoreboard::clearScoreboard()
 {
-	for(int i = 0; i < m_scores.size();i++)
+	for(unsigned int i = 0; i < m_scores.size();i++)
 	{
-		for(int j = 0; j < m_scores[i].size();j++)
+		for(unsigned int j = 0; j < m_scores[i].size();j++)
 		{
 			m_scores[i][j] = 0;
 		}
