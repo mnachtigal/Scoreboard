@@ -14,13 +14,18 @@ Scoreboard::Scoreboard(int competitors, int period) {
 
 void Scoreboard::setScore(int competitor, int period, int score)
 {
-   m_scores[competitor - 1][period - 1] = score;
+   if (competitor > 0 && competitor <= m_scores.size() && period > 0 && period <= m_scores[0].size()) {
+      m_scores[competitor - 1][period - 1] = score;
+   }
 }
 
 int Scoreboard::getScore(int competitor, int period)
 {
-  return m_scores[competitor-1][period-1];
-
+   if (competitor > 0 && competitor <= m_scores.size() && period > 0 && period <= m_scores[0].size()) {
+      return m_scores[competitor-1][period-1];
+   } else {
+      return INT_MIN;
+   }
 }
 
 int Scoreboard::getTotalScore(int competitor)
