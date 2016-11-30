@@ -2,6 +2,7 @@
 #define SCOREBOARD_H
 
 #include "IScoreboard.h"
+#include "ObserverPattern.hpp"
 
 #include <iostream>
 #include <vector>
