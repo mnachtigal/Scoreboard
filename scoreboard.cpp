@@ -20,6 +20,7 @@ void Scoreboard::setScore(int competitor, int period, int score)
          && period > 0 && period <= num_periods) {
       m_scores[competitor - 1][period - 1] = score;
    }
+   notifyObservers();
 }
 
 int Scoreboard::getScore(int competitor, int period)
@@ -54,4 +55,5 @@ void Scoreboard::clearScoreboard()
 			m_scores[i][j] = 0;
 		}
 	}
+   notifyObservers();
 }
